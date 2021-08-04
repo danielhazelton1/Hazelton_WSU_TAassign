@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="login">
+    <img src="https://ok6static.oktacdn.com/fs/bco/1/fs02rbgatjJDz8p2L2p7" class="uni-logo" alt="uni-logo">
+	<div class="input-info">
+	<form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+		<div id="selection">
+		
+		</div>
+		<p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+		<p>{{ form.type() }}
+		{% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+		</p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <div class="login-button">
+		<p> {{ form.submit() }}</p>
+		</div>
+		<p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
+    </form>
+	</div>
+</div>
+{% endblock %}
+

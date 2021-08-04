@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+        .greeting {
+            height: 60px;
+            width: 100%;
+            align-self: center;
+            background-color: #981E32;
+            padding-top: 20px;
+            text-align: center;
+            color: white;
+        }
+        .student_info{
+            background-color: #EDF3F4;
+            color: #2A3033
+        }
+        .subheader{
+            font-weight: bold;
+            padding-bottom: 8px;
+        }
+    </style>
+    <header class="main-header">
+        <div class="greeting">
+            <h1>
+                Hello, {{ current_user.username }}!
+            </h1>
+        </div>
+    </header>
+    <div class="student_info">
+        <h1 class="subheader">Student Information</h1>
+        <div class="contents">
+            <p>Name: {{ current_user.name }} {{ current_user.lastname }} </p>
+            <p>Email: {{ current_user.email }} </p>
+            <p>ID: {{ current_user.wsuID }} </p>
+            <p>Phone#: {{ current_user.phone}} </p>
+        </div>
+    </div>
+	<p class="link"><a href="{{ url_for('edit_student') }}">Click to Edit Profile!</a></p>
+{% endblock %}

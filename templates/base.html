@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
+<html>
     <head>
-
         <meta charset="utf-8">
         <title>TA Application | School of Electrical Engineering & Computer Science</title>
 
@@ -34,9 +30,12 @@
 				applicationTA().start();
 			});
 		</script>
-
+		
+		
+		
+	
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"><!--This is the css file-->
     </head>
-
     <body>
 
         <div id="jacket">
@@ -59,25 +58,37 @@
 
                     <div class="main-page">
                         
-                        <div class="page">
+                        <article id="signin">
+
                             
-                            <article>
-                                <h3>Instructor Page Work Here</h3>
-                                <p>
-                                    Instructor information Shown here!
-                                </p>
-                                <div class="instructor info">
-                                    <p>
-                                        Name: Bobby Bobbins
-                                        Email: bobby.bobbins@wsu.edu
-                                        Phone: (909) 999-9999
-                                    </p>    
 
-                                </div>
+                        </article>
 
-                            </article>
+                        
+										<div>
+											TA_website:
+											<a href="{{ url_for('index') }}">Home</a>
+											{% if current_user.is_anonymous %}
+											<a href="{{ url_for('login') }}">Login</a>
+											{% else %}
+											<a href="{{ url_for('logout') }}">Logout</a>
+											{% endif %}
+										</div>
+										<hr>
+										{% with messages = get_flashed_messages() %}
+										{% if messages %}
+										<ul>
+											{% for message in messages %}
+											<li>{{ message }}</li>
+											{% endfor %}
+										</ul>
+										{% endif %}
+										{% endwith %}
+										<div class="contain"><!--This is where each template is loaded-->
+										{% block content %}
+										{% endblock %}
+										</div>
 
-                        </div>
 
                     </div><!-- End .main-page -->
 
@@ -115,32 +126,29 @@
                         <!-- Both #spine-navigation and .spine-navigation are required here. -->
                         <section id="spine-navigation" class="spine-navigation">
                             
-                        <!-- Both #spine-navigation and .spine-navigation are required here. -->
-                        <section id="spine-navigation" class="spine-navigation">
-                            
-                                <!-- The main navigation for the site. -->
-                                <nav class="spine-sitenav">
-    
-                                    <ul>
-                                        <li><a href="Main.html">Home</a></li>
-                                        <li class="parent"><a href="Student.html">Student</a>
-                                            <ul>
-                                                <li class="student assignment"><a href="Student-Assignments.html">Assignments</a></li>
-                                            </ul>
-                                        </li>
-                                        
-                                        <li class="parent dogeared opened"><a href="Instructor.html">Instructor</a>
-                                            <ul>
-                                                <li class="instructor courses"><a href="Instructor-Courses.html">Courses</a></li>
-                                                <li class="instructor assignments"><a href="Instructor-Assignments.html">Assingments</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="contact"><a href="https://school.eecs.wsu.edu/team-epsilon/contact/">Contact</a></li>
-                                    </ul>
+                            <!-- The main navigation for the site. -->
+                            <nav class="spine-sitenav">
+
+                                <ul>
+                                    <li class="current"><a href="Main.html">Home</a></li>
+                                    <li class="parent"><a href="Student.html">Student</a>
+                                        <ul>
+                                            <li class="student assignment"><a href="Student-Assignments.html">Assignments</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li class="parent"><a href="Instructor.html">Instructor</a>
+                                        <ul>
+                                            <li class="instructor courses"><a href="Instructor-Courses.html">Courses</a></li>
+                                            <li class="instructor assignments"><a href="Instructor-Assignments.html">Assingments</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="contact"><a href="https://school.eecs.wsu.edu/team-epsilon/contact/">Contact</a></li>
+                                </ul>
                                 
-                                </nav>
-    
-                            </section><!-- End #spine-navigation .spine-navigation -->
+                            </nav>
+
+                        </section><!-- End #spine-navigation .spine-navigation -->
 
                         <!-- Social and required global WSU links. -->
                         <footer class="spine-footer">
@@ -186,5 +194,4 @@
         </div>
 
     </body>
-
 </html>

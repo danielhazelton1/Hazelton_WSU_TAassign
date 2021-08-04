@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+    
+    <div><p>This is the instructor page</p></div>
+    <div><p>First Name: {{ current_user.name }}  </p></div>
+    <div><p>Last Name: {{ current_user.lastname }}  </p></div>
+    <div><p>Email: {{ current_user.email }}  </p></div>
+    <div><p>ID: {{ current_user.wsuID }}  </p></div>
+    <div><p>Phone#: {{ current_user.phone}}  </p></div>
+	<p><a href="{{ url_for('edit_instructor') }}">Click to Edit Profile!</a></p>
+	<p>Courses:</p>
+	{% for c in course %}
+    <div><p> <b>{{ c }}</b></p></div>
+    {% endfor %}
+	<p><a href="{{ url_for('addcourse') }}">Click to add course!</a></p>
+{% endblock %}
