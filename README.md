@@ -19,4 +19,7 @@ The application will further be split into a Student Side and an Instructor Side
 - SQLite 
 
 # Pictures:
-### **Here are some the resulting data plots of the accuracy .**
+### **Login Page:**
+![TA1](https://user-images.githubusercontent.com/87416441/128253085-d96d805e-35b3-4916-8ddc-7c7e08ba726b.png)
+### **Sign Up Page:**
+![TA2](https://user-images.githubusercontent.com/87416441/128253098-22767929-c27f-4ca3-880d-e724332639b9.png)
