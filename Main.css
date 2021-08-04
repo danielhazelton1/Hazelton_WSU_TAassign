@@ -1,0 +1,97 @@
+#jacket {
+    background-color: white;
+}
+
+.main-header { 
+    font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    background-color: white;
+}
+
+.site-name {
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -1px;
+}
+
+.sub-name {
+    font-size: 25px;
+    color: #464E54;
+    text-transform: uppercase;
+}
+
+#signin {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+.login {
+    border: 1px solid lightgrey;
+    width: 55%;
+    margin: 0 auto;
+    background-color: beige;
+}
+
+.uni-logo {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-info {
+    width: 85%;
+    margin: 0 auto;
+}
+
+#selection {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.instructorbtn {
+    margin-left: auto;
+}
+
+textarea {
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 18px;
+    height: 10px;
+}
+
+.login-button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.links {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* ------------------- Create Account ------------------- */
+
+#sign-up {
+    margin-top: 10%;
+}
+
+.create-info {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#selection-list {
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+    margin-top: 3%;
+    margin-bottom: 8px;
+}
+
+#select {
+    height: 25px;
+    margin-left: 15px;
+}
